@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "python_news"
+version = "0.0.1"
+description = ""
+authors = ["Mirko Bonasorte <fcracker79@gmail.com>"]
+readme = "README.md"
+packages = [{include = "python_news"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
