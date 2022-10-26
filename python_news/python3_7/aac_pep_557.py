@@ -1,3 +1,5 @@
+# PEP 557: Data classes
+
 import dataclasses
 import typing
 

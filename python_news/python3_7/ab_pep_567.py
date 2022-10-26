@@ -1,5 +1,6 @@
+# PEP 567: Context variables
 import asyncio
-from contextvars import ContextVar, Context
+from contextvars import ContextVar
 
 var_what = ContextVar("what")
 
