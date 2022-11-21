@@ -81,3 +81,4 @@ if __name__ == '__main__':
     s.single_dispatch(SubSubClass())  # single_distpatch with SubClass (class)
     s.single_dispatch(SubSubSubClass())  # single_distpatch with SubClass (class)
     s.single_dispatch(SubSubSubClassStrFirst())  # single_distpatch with str (class)
+T
