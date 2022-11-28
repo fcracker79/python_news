@@ -1,7 +1,7 @@
 # https://peps.python.org/pep-0544/
 # static duck typing
 
-from typing import Protocol
+from typing import Protocol, TypeVar
 
 class SupportsClose(Protocol):
     def close(self) -> None: ...
@@ -18,3 +18,16 @@ def close_resource(r: SupportsClose) -> None:
 
 f = File()
 close_resource(f)
+
+
+# A better example that fits the idea of duck typing
+
+T = TypeVar('T')
+
+class Repeatable(Protocol):
+    def __mul__(self: T, repeat_count: int) -> T: ...
+
+RT = TypeVar("RT", bound=Repeatable)
+
+def double(x: RT) -> RT:
+    return x * 2
