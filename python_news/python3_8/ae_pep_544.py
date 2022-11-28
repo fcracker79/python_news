@@ -1,7 +1,8 @@
 # https://peps.python.org/pep-0544/
 # static duck typing
 
-from typing import Protocol, TypeVar
+from typing import Protocol, TypeVar, runtime_checkable
+from abc import abstractmethod
 
 class SupportsClose(Protocol):
     def close(self) -> None: ...
@@ -31,3 +32,14 @@ RT = TypeVar("RT", bound=Repeatable)
 
 def double(x: RT) -> RT:
     return x * 2
+
+
+# @runtime_checkable decorator mark a protocol class as runtime protocol
+
+@runtime_checkable
+class SupportsComplex(Protocol):
+    @abstractmethod
+    def __complex__(self) -> complex: ...
+
+
+# you can then check at runtime isinstance(z, SupportsComplex)
